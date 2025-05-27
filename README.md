@@ -1,16 +1,50 @@
-# casestudy_automata
+# Case Study Automata
 
-A new Flutter project.
+## Overview
+This project is a Flutter application that serves as a case study for various algorithms. The main interface is built using a stateful widget that allows users to interact with different algorithm options.
 
-## Getting Started
+## Project Structure
+```
+casestudy_automata
+├── lib
+│   ├── homepage.dart          # Contains the HomepageWidget class for the main interface.
+│   ├── main.dart              # Entry point of the application, initializes the app.
+│   └── flutter_flow
+│       ├── flutter_flow_theme.dart  # Defines the app's theme including colors and styles.
+│       ├── flutter_flow_util.dart   # Contains utility functions for navigation and common tasks.
+│       └── flutter_flow_widgets.dart # Custom widget definitions for reusable components.
+├── pubspec.yaml                # Configuration file for dependencies and assets.
+└── README.md                   # Documentation for the project.
+```
 
-This project is a starting point for a Flutter application.
+## Setup Instructions
+1. **Clone the repository**:
+   ```
+   git clone <repository-url>
+   cd casestudy_automata
+   ```
 
-A few resources to get you started if this is your first Flutter project:
+2. **Install dependencies**:
+   Run the following command in the project directory:
+   ```
+   flutter pub get
+   ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+3. **Run the application**:
+   Use the following command to launch the app:
+   ```
+   flutter run
+   ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Features
+- Interactive interface with clickable containers for different algorithms.
+- App bar with the title "AUTOMATA - CASE STUDY".
+- Footer displaying contributor information.
+
+## Usage
+- Click on the algorithm options to navigate to their respective pages.
+- The app is designed to provide a user-friendly experience while exploring various algorithms.
+
+## Contributors
+- Caasi, Asilito
+- Colarina, Ricardo Jose
