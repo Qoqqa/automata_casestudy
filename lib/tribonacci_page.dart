@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'dart:math' as math;
 
 const String tribonacciDescription =
-    'The Tribonacci sequence is a generalization of the Fibonacci sequence where each term is the sum of the three preceding terms, starting with 0, 1, 1.';
+    'The Tribonacci sequence is a generalization of the Fibonacci sequence where each term is the sum of the three preceding terms, starting with 0, 0, 1.';
 
 class TribonacciPage extends StatefulWidget {
   const TribonacciPage({super.key});
@@ -25,9 +25,9 @@ class _TribonacciPageState extends State<TribonacciPage>
   List<int> _generateTribonacciSequence(int n) {
     if (n <= 0) return [];
     if (n == 1) return [0];
-    if (n == 2) return [0, 1];
-    if (n == 3) return [0, 1, 1];
-    List<int> sequence = [0, 1, 1];
+    if (n == 2) return [0, 0];
+    if (n == 3) return [0, 0, 1];
+    List<int> sequence = [0, 0, 1];
     for (int i = 3; i < n; i++) {
       sequence.add(sequence[i - 1] + sequence[i - 2] + sequence[i - 3]);
     }

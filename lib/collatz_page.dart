@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'dart:math' as math;
 
 const String collatzDescription =
-    'The Collatz conjecture is a sequence defined as follows: start with any positive integer n. If n is even, divide it by 2; if n is odd, multiply it by 3 and add 1. Repeat the process until you reach 1.';
+    'The Collatz conjecture is a sequence defined as follows: start with any positive integer n. If n is odd, multiply it by 3 and add 1. Repeat the process until you reach 1.';
 
 class CollatzPage extends StatefulWidget {
   const CollatzPage({super.key});
@@ -53,10 +53,11 @@ class _CollatzPageState extends State<CollatzPage>
   }
 
   void _calculateCollatz() {
+    // Modify the input validation to only accept odd numbers
     final input = int.tryParse(_controller.text);
-    if (input == null || input < 1) {
+    if (input == null || input < 1 || input % 2 == 0) {
       setState(() {
-        _error = 'Please enter a valid positive integer.';
+        _error = 'Please enter a valid positive odd integer.';
         _result = '';
         _sequence = '';
         _showResult = true;

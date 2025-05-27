@@ -212,7 +212,7 @@ class _PascalPageState extends State<PascalPage>
                           controller: _controller,
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration(
-                            labelText: 'Input number of rows',
+                            labelText: 'Input a row number',
                             prefixIcon: const Icon(Icons.format_list_numbered, color: Color.fromARGB(255, 60, 145, 156)),
                             filled: true,
                             fillColor: Colors.teal[50],
@@ -296,24 +296,66 @@ class _PascalPageState extends State<PascalPage>
                                       ),
                                       const SizedBox(height: 16),
                                       if (_triangle.isNotEmpty)
-                                        SingleChildScrollView(
-                                          scrollDirection: Axis.horizontal,
-                                          child: ConstrainedBox(
-                                            constraints: const BoxConstraints(minWidth: 400),
-                                            child: Column(
-                                              crossAxisAlignment: CrossAxisAlignment.center,
-                                              children: _triangle
-                                                  .map((row) => Padding(
+                                        Row(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            // Row numbers column
+                                            Column(
+                                              crossAxisAlignment: CrossAxisAlignment.end,
+                                              children: [
+                                                ...List.generate(
+                                                  _triangle.length,
+                                                  (index) {
+                                                    String suffix;
+                                                    if (index % 10 == 1 && index % 100 != 11) {
+                                                      suffix = 'st';
+                                                    } else if (index % 10 == 2 && index % 100 != 12) {
+                                                      suffix = 'nd';
+                                                    } else if (index % 10 == 3 && index % 100 != 13) {
+                                                      suffix = 'rd';
+                                                    } else {
+                                                      suffix = 'th';
+                                                    }
+                                                    return Padding(
+                                                      padding: const EdgeInsets.symmetric(vertical: 2),
+                                                      child: Text(
+                                                        '$index$suffix row',
+                                                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                                        textAlign: TextAlign.right,
+                                                      ),
+                                                    );
+                                                  },
+                                                ),
+                                              ],
+                                            ),
+                                            const SizedBox(width: 8), // Add spacing between row numbers and triangle
+                                            // Pascal's Triangle rows
+                                            Expanded(
+                                              child: SingleChildScrollView(
+                                                scrollDirection: Axis.horizontal,
+                                                child: ConstrainedBox(
+                                                  constraints: const BoxConstraints(minWidth: 400),
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                                    children: [
+                                                      const Padding(
+                                                        padding: EdgeInsets.symmetric(vertical: 2),
+                                                        child: SizedBox.shrink(),
+                                                      ),
+                                                      ..._triangle.map((row) => Padding(
                                                         padding: const EdgeInsets.symmetric(vertical: 2),
                                                         child: Text(
                                                           row.join(' '),
                                                           style: const TextStyle(fontSize: 16),
                                                           textAlign: TextAlign.center,
                                                         ),
-                                                      ))
-                                                  .toList(),
+                                                      )).toList(),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
                                             ),
-                                          ),
+                                          ],
                                         ),
                                     ],
                                   ),
