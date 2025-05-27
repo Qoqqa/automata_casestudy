@@ -19,9 +19,9 @@ This project is a modern Flutter application for exploring and visualizing class
   - Euclidean Algorithm (GCD)
   - Pascal's Triangle
 
-## Project Structure
+## Folder Structure
 ```
-casestudy_automata
+project_root/
 ├── lib/
 │   ├── main.dart                # App entry point
 │   ├── homepage.dart            # Main navigation and UI
@@ -36,21 +36,27 @@ casestudy_automata
 │       └── fibonacci.png        # Custom Fibonacci icon
 ├── pubspec.yaml                 # Dependencies and assets
 ├── README.md                    # Project documentation
-└── ... (platform folders: android, ios, web, etc.)
+├── android/                     # Android platform code
+├── ios/                         # iOS platform code
+├── linux/                       # Linux platform code
+├── macos/                       # macOS platform code
+├── web/                         # Web platform code
+├── windows/                     # Windows platform code
+└── test/                        # Widget and unit tests
 ```
 
 ## Setup Instructions
 1. **Clone the repository:**
-   ```
+   ```sh
    git clone https://github.com/Qoqqa/automata_casestudy.git
    cd automata_casestudy
    ```
 2. **Install dependencies:**
-   ```
+   ```sh
    flutter pub get
    ```
 3. **Run the application:**
-   ```
+   ```sh
    flutter run
    ```
 
