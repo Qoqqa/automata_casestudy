@@ -1,50 +1,68 @@
-# Case Study Automata
+# Sequences and Algorithms
 
 ## Overview
-This project is a Flutter application that serves as a case study for various algorithms. The main interface is built using a stateful widget that allows users to interact with different algorithm options.
+This project is a modern Flutter application for exploring and visualizing classic mathematical sequences and algorithms. The app features a unified, animated UI/UX and interactive pages for each algorithm, making it ideal for learning and demonstration purposes.
+
+## Features
+- Beautiful, consistent card-based UI for all algorithm pages
+- Animated backgrounds and header icons for each sequence/algorithm
+- Easy-to-edit descriptions for each algorithm
+- Robust error/result handling with fade-in cards
+- Copy-to-clipboard for results and sequences
+- Floating action buttons for quick navigation
+- Custom app icon and branding
+- Algorithms included:
+  - Fibonacci Sequence
+  - Lucas Sequence
+  - Tribonacci Sequence
+  - Collatz Conjecture
+  - Euclidean Algorithm (GCD)
+  - Pascal's Triangle
 
 ## Project Structure
 ```
 casestudy_automata
-├── lib
-│   ├── homepage.dart          # Contains the HomepageWidget class for the main interface.
-│   ├── main.dart              # Entry point of the application, initializes the app.
-│   └── flutter_flow
-│       ├── flutter_flow_theme.dart  # Defines the app's theme including colors and styles.
-│       ├── flutter_flow_util.dart   # Contains utility functions for navigation and common tasks.
-│       └── flutter_flow_widgets.dart # Custom widget definitions for reusable components.
-├── pubspec.yaml                # Configuration file for dependencies and assets.
-└── README.md                   # Documentation for the project.
+├── lib/
+│   ├── main.dart                # App entry point
+│   ├── homepage.dart            # Main navigation and UI
+│   ├── fibonacci_page.dart      # Fibonacci sequence page
+│   ├── lucas_page.dart          # Lucas sequence page
+│   ├── tribonacci_page.dart     # Tribonacci sequence page
+│   ├── collatz_page.dart        # Collatz conjecture page
+│   ├── euclidean_page.dart      # Euclidean algorithm (GCD) page
+│   ├── pascal_page.dart         # Pascal's Triangle page
+│   └── icons/
+│       ├── appicon.png          # App launcher icon
+│       └── fibonacci.png        # Custom Fibonacci icon
+├── pubspec.yaml                 # Dependencies and assets
+├── README.md                    # Project documentation
+└── ... (platform folders: android, ios, web, etc.)
 ```
 
 ## Setup Instructions
-1. **Clone the repository**:
+1. **Clone the repository:**
    ```
-   git clone <repository-url>
-   cd casestudy_automata
+   git clone https://github.com/Qoqqa/automata_casestudy.git
+   cd automata_casestudy
    ```
-
-2. **Install dependencies**:
-   Run the following command in the project directory:
+2. **Install dependencies:**
    ```
    flutter pub get
    ```
-
-3. **Run the application**:
-   Use the following command to launch the app:
+3. **Run the application:**
    ```
    flutter run
    ```
 
-## Features
-- Interactive interface with clickable containers for different algorithms.
-- App bar with the title "AUTOMATA - CASE STUDY".
-- Footer displaying contributor information.
-
 ## Usage
-- Click on the algorithm options to navigate to their respective pages.
-- The app is designed to provide a user-friendly experience while exploring various algorithms.
+- Select an algorithm from the homepage to explore its interactive page.
+- Enter input values and generate results.
+- Copy results to clipboard using the copy button.
+- Use the floating action button to quickly scroll to the top.
 
 ## Contributors
 - Caasi, Asilito
 - Colarina, Ricardo Jose
+
+---
+This app is for educational and demonstration purposes. Enjoy exploring sequences and algorithms!
